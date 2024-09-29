@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGenLearner</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #000000, #1a1a1a, #2c2c2c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .content {
+            text-align: center;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin: 0;
+            color: #ff0000;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        .dot {
+            color: #ffff00;
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            margin-top: 1rem;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards 0.5s;
+        }
+
+        .custom-button {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #fff;
+            background: linear-gradient(45deg, #1a1a1a, #333333);
+            border: 2px solid #444;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards 1s;
+        }
+
+        .custom-button:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+
+        .custom-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(45deg, #222222, #444444);
+            border-color: #555;
+        }
+
+        .custom-button:hover:before {
+            left: 100%;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .icons {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards 1.5s;
+        }
+
+        .icon {
+            font-size: 2em;
+            color: #4ecdc4;
+            transition: all 0.3s ease;
+        }
+
+        .icon:hover {
+            color: #ff9ff3;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>NextGenLearner<span class="dot">.</span>com</h1>
+        <p class="tagline">Unlock Your Potential with AI-Assisted Learning</p>
+        <a href="{% url 'loading' %}  "class="custom-button">Let's Start</a>
+        <div class="icons">
+            <i class="fas fa-brain icon"></i>
+            <i class="fas fa-graduation-cap icon"></i>
+            <i class="fas fa-laptop-code icon"></i>
+        </div>
+    </div>
+</body>
+</html>

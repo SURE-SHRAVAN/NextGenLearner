@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+        }
+
+        .logo-container {
+            text-align: center;
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
+        }
+
+        .loading {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #333;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 0.2; }
+            50% { opacity: 1; }
+            100% { opacity: 0.2; }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        {% load static %}
+        <img src="{% static 'core/images/NextGenLearner.png' %}" alt="Website Logo" class="logo">
+        <div class="loading">Loading...</div>
+    </div>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = "{% url 'query' %}"; // Replace 'query_page' with the actual URL or path for query.html
+        }, 2000); // Redirects after 2 seconds
+    </script>
+</body>
+</html>
